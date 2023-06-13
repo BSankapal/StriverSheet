@@ -1,0 +1,22 @@
+Program to generate Pascal’s Triangle
+Problem Statement: This problem has 3 variations. They are stated below:
+Variation 1: Given row number r and column number c. Print the element at position (r, c) in Pascal’s triangle.
+Soln : (r-1)C(c-1)
+FOR 0-Based INDEXING
+
+[nCr = n!/r!*(n-r)!]
+nC1 = n!/1!*(n-1)!
+nC2 = n!/2!*(n-2)!
+nCr = temp*(n-r+1)/r
+
+Variation 2: Given the row number n. Print the n-th row of Pascal’s triangle.
+n = 5 -> 1 4 6 4 1
+temp = 1
+temp = 1*(5-1)/1
+temp = 4*(5-2)/2
+
+Variation 3: Given the number of rows n. Print the first n rows of Pascal’s triangle.
+
+Approach 1: Brute Force and Optimal Solution
+Time Complexity - O(n2)
+Space Complexity - O(1)
