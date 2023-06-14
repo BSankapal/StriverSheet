@@ -1,0 +1,26 @@
+Kadane’s Algorithm : Maximum Subarray Sum in an Array
+Problem Statement: Given an integer array arr, 
+find the contiguous subarray (containing at least one number) which
+has the largest sum and returns its sum and prints the subarray.
+
+Approach 1: Brute Force
+Keep 2 pointers i and j -> keep track of Maximum
+
+Approach 2: Kadane Algorithm
+Intuition - A subarray with a sum less than 0 will always reduce our answer 
+and so this type of subarray cannot be a part of the subarray with maximum sum.
+
+Need 2 variable 
+long long int max=0, sum=0;
+for(long long int i=0;i<n;i++){
+    sum = sum + arr[i];
+    max = max(sum, max);
+    if(sum < 0){
+        sum = 0;
+    }
+}
+
+return max;
+
+TC - O(N)
+SC - O(1)

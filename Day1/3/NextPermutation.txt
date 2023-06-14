@@ -1,0 +1,29 @@
+next_permutation : find next lexicographically greater permutation
+Problem Statement: Given an array Arr[] of integers, 
+rearrange the numbers of the given array into the 
+lexicographically next greater permutation of numbers.
+
+Approach 1: Subsequence problem -> TLE (Time Limit)
+
+Apporach 2: General Observation and Optimal Soln
+Suppose consider the sequence
+2 1 5 4 3 0 0 
+-> just next element would be - 2 3 0 0 1 4 5
+
+Subarray - right side of the array where arr[i]>arr[i+1] (Decreasing Array)
+Pivot/Break Point - where the element just before the subarray starts.
+For ex - 1 in the above example
+
+Step 1 : Find Pivot/Break Point
+
+Step 2 : if No pivot -> Decreasing Array(Largest number possible) return reverse of array(Smallest number)
+
+Step 3 : Swap the pivot to the element just greater than pivot present in right
+2 [1] 5 4 3 [_] 0 0 => 2 3 5 4 1 0 0 this number is greater than the array
+
+Step 4: rev the array from (pivot index+1) or start of the subarray to last element of the array -> Answer
+2 3 0 0 1 4 5
+
+TC - O(3*N)
+SC - O(1)
+
