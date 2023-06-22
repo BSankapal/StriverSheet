@@ -1,0 +1,28 @@
+Implement Pow(x,n) | X raised to the power N
+Problem Statement: Given a double x and integer n, 
+calculate x raised to power n. Basically Implement pow(x, n).
+
+Approach 1 - Brute Force
+TC - O(n)
+SC - O(1)
+
+Approach 2 - Binary Exponentation
+(x^n)%m
+
+Convert everything x, n, m to long 
+long ans = 1;
+long xx = X;
+long nn = n;
+
+if nn is odd -> 
+    ans = ans*xx
+    nn--;
+if nn is even ->
+    xx = xx*xx;
+    nn = nn/2;
+
+return ans;
+
+TC - O(log n)
+SC - O(1)
+    

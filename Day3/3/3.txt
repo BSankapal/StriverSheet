@@ -1,0 +1,30 @@
+Find the Majority Element that occurs more than N/2 times
+Problem Statement: Given an array of N integers,
+Write a program to return an element that occurs more than N/2 times in the given array. 
+You may consider that such an element always exists in the array.
+
+Approach 1: 
+Brute Force
+
+Approach 2: Better Approach - TO DO - Hashmap
+TC - O(n*log n)+O(n)
+    Insertion of each element - log n 
+SC - O(n)
+
+Approach 3: Optimal Solution
+Keep a variable el and cnt - count of element el
+For a subarray if cnt = 0 then the el is majority for the subarray 
+
+Keep track of the max occuring element 
+
+if(cnt == 0)
+    consider el = arr[i];
+    cnt = 1;
+if(arr[i] == el)
+    cnt++;
+else
+    cnt--;
+
+TC - O(n) + O(n)
+SC - O(1)
+

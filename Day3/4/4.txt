@@ -1,0 +1,17 @@
+Majority Elements(>N/3 times) | Find the elements that appears more than N/3 times in the array
+Problem Statement: Given an array of N integers.
+ Find the elements that appear more than N/3 times in the array. 
+If no such element exists, return an empty vector.
+
+Optimal Solution - 
+keep 2 elements el1, el2, cnt1, cnt2.
+
+if(c1 == 0)
+    el1 = arr[i]
+    c1 = 1
+
+if(arr[i] == el1)
+    c1++
+
+TC - O(N)+O(N)
+SC - O(1)
