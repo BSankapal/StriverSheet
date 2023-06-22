@@ -1,0 +1,47 @@
+Find the duplicate in an array of N+1 integers
+Problem Statement: Given an array of N + 1 size, where each element is between 1 and N. 
+Assuming there is only one duplicate number, your task is to find the duplicate number.
+
+Approach 1:
+Sort the array and find where arr[i] == arr[i+1]
+
+TC - O(n*logn)+O(n)
+SC - O(1)
+
+Approach 2:
+Keep track of the frequency of each element 
+when its 2 return the element
+
+TC - O(n)
+SC - O(n)
+
+Approach 3:
+Linked List Approach ->
+Step 1:
+If we are index j and element i -> go to index i and => Cycle is formed
+Step 2:
+Cycle detection using fast and slow ptr
+
+Step 1: slow = arr[0] fast = arr[0]
+slow = slow->next 
+fast = fast->next->next
+
+Step 2: 
+While(slow != fast){
+slow = slow->next 
+fast = fast->next->next
+}
+
+Step 3:
+Initialize fast = arr[0];
+While(slow != fast){
+slow = slow->next 
+fast = fast->next->next
+}
+
+return slow;
+
+Since we traversed through the array only once.
+TC - O(N)
+SC - O(1)
+

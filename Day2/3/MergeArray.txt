@@ -1,0 +1,24 @@
+Merge two Sorted Arrays Without Extra Space
+Problem statement: Given two sorted arrays arr1[] and arr2[] of 
+sizes n and m in non-decreasing order. Merge them in sorted order.
+Modify arr1 so that it contains the first N elements and modify arr2 
+so that it contains the last M elements.
+
+Approach 1: 
+Step 1:
+Keep 2 pointers - i - end of arr1 and j - start of arr2
+while(arr1[i] > arr2[j]){
+    swap(arr1[i], arr2[j]);
+    i--;
+    j++;
+}
+
+When arr1[i] <= arr2[j] - then the individual subarray will have respective elements but unsorted
+
+Step 2 : sort both arrays
+
+TC - O(min(n, m)) + O(n*logn) + O(m*logm) 
+SC - O(1)
+
+Approach 2:
+Gap method

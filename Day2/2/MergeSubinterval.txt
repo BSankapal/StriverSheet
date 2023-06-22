@@ -1,0 +1,31 @@
+Merge Overlapping Sub-intervals
+Problem Statement: Given an array of intervals, 
+merge all the overlapping intervals and 
+return an array of non-overlapping intervals.
+
+Optimal Approach: Single iteration
+
+Step 1 : Sort the subarray.
+Sort - first element of the subarray will be sorted and if equal then 2nd element sort.
+
+Step 2:
+for(i = 0->n)
+    if(ans.empty() - first element || ans.back()[1] < arr[i][0] - non overlapping subintervals){
+        ans.push_back(arr[i]);
+    }
+    else{
+        ans.back()[1] = max(ans.back()[1], arr[i][1]);
+
+        in this case 
+        ans.back()[1] >= arr[i][0]
+
+        For example ans has element - (1, 10) and arr[i][0] = (8, 11) or (8, 9)
+        So we need to take the max - 11 or 9
+    }
+
+
+TC - O(N*log N) + O(N)
+Sort + traverse
+SC - O(N) / O(1) = to store ans
+
+
