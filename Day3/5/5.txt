@@ -1,0 +1,22 @@
+Grid Unique Paths | Count paths from left-top to the right bottom of a matrix
+Problem Statement: Given a matrix m X n, count paths 
+from left-top to the right bottom of a matrix with the constraints 
+that from each cell you can either only move to the 
+rightward direction or the downward direction.
+
+Approach 1: Recursive Solution
+We are currently at (0, 0) -> (n-1, m-1)
+2 ways to reach the path either increment x or y.
+
+countPath(int i, int j, int m, int n){
+    if(i == m-1 && j == n-1) return 1;
+    if(i>=m || j>=n) return 0;
+    else
+        return countPath(i+1, j, m, n)+countPath(i, j+1, m, n);
+}
+
+
+return countPath(0, 0, m, n);
+
+
+Optimal Solution - Using DP
